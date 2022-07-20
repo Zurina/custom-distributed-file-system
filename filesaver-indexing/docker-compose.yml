@@ -1,0 +1,27 @@
+version: '3.4'
+
+services:
+  filesaverstorage1:
+    image: filesaver-storage
+    environment:
+      - TCP_PORT=33333
+    ports:
+      - 33333:33333
+    expose:
+      - 33333
+
+  filesaverstorage2:
+    image: filesaver-storage
+    environment:
+      - TCP_PORT=33332
+    ports:
+      - 33332:33332
+    expose:
+      - 33332
+
+  filesaver-indexing:
+    image: filesaver-indexing
+    ports:
+      - 8080:8080
+    expose:
+      - 8080
